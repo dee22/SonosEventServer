@@ -1,6 +1,6 @@
 FROM php:8.1-apache
 
-COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY ./docker/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 RUN a2enmod rewrite
 
@@ -18,7 +18,7 @@ RUN composer global require leafs/cli
 
 RUN ln -s /root/.composer/vendor/bin/leaf /usr/local/bin/leaf
 
-COPY ./php.ini /usr/local/etc/php/php.ini
+COPY ./docker/php.ini /usr/local/etc/php/php.ini
 
 RUN apt-get purge -y g++ \
     && apt-get autoremove -y \
