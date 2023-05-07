@@ -3,7 +3,14 @@ services:
   application:
     build: ./docker
     image: leafphp/docker
-    ports:
-      - "8080:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx.rule=Host(`api.novacode.cc`)"
+    networks:
+      - traefik_web
     volumes:
       - .:/var/www
+
+networks:
+  traefik_web:
+    external: true
