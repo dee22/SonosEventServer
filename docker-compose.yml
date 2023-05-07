@@ -5,7 +5,7 @@ services:
     image: leafphp/docker
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=Host(`api.novacode.cc`)"
+      - "traefik.http.routers.apache.rule=Host(`api.novacode.cc`)"
     networks:
       - traefik_web
     volumes:
