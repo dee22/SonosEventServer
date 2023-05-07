@@ -1,11 +1,11 @@
-version: "3.1"
+version: "3.3"
 services:
-  application:
+  soneveser:
     build: ./docker
     image: leafphp/docker
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.apache.rule=Host(`api.novacode.cc`)"
+      - "traefik.http.routers.soneveser.rule=Host(`api.novacode.cc`)"
     networks:
       - traefik_web
     volumes:
