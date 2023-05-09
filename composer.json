@@ -57,7 +57,10 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "sort-packages": false
+        "sort-packages": false,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "scripts": {
         "post-root-package-install": [
